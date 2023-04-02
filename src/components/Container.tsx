@@ -8,7 +8,7 @@ type ContainerProps = {
 function Container({ children }: ContainerProps) {
   return (
     <MuiContainer sx={{ height: '100vh' }} maxWidth={false} disableGutters>
-      <Box bgcolor="background.paper" height={1}>
+      <Box bgcolor="background.paper" height={1} display="flex" flexDirection="column">
         {children}
       </Box>
     </MuiContainer>
