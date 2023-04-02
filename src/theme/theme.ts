@@ -4,22 +4,21 @@ const theme = createTheme({
   palette: {
     mode: 'dark',
     primary: {
-      main: '#BE6FEA', // less light purple
+      main: '#0489aa',
     },
     secondary: {
-      main: '#66E0FF', // cyan
+      main: '#BE6FEA',
     },
     background: {
-      paper: '#1F1F1F', // dark gray
-      default: '#121212', // even darker gray
+      paper: '#1F1F1F',
+      default: '#121212',
     },
     text: {
-      primary: '#F5F5F5', // white
-      secondary: '#66E0FF', // cyan
+      primary: '#F5F5F5',
     },
   },
   typography: {
-    fontFamily: 'Roboto, sans-serif',
+    fontFamily: 'Inter, system-ui, Avenir, Helvetica, Arial, sans-serif',
     fontWeightLight: 300,
     fontWeightRegular: 400,
     fontWeightMedium: 500,
