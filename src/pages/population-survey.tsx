@@ -1,6 +1,13 @@
 import { AppBar, Toolbar, IconButton, Typography, Box } from '@mui/material'
 import SettingsIcon from '@mui/icons-material/Settings'
-import { Container, YearSelect, CountySelect, DistrictSelect, SubmitButton } from '../components'
+import {
+  Container,
+  YearSelect,
+  CountySelect,
+  DistrictSelect,
+  SubmitButton,
+  PageTitle,
+} from '../components'
 
 function PopulationSurveyPage() {
   return (
@@ -20,11 +27,7 @@ function PopulationSurveyPage() {
           </IconButton>
         </Toolbar>
       </AppBar>
-      <Box width={1} display="flex" justifyContent="center" p={2}>
-        <Typography variant="h3" color="common.white">
-          人口數、戶數按戶別及性別統計
-        </Typography>
-      </Box>
+      <PageTitle />
       <Box display="flex" flexDirection="column" p={2} gap={2}>
         <YearSelect />
         <CountySelect />
