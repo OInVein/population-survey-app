@@ -7,7 +7,18 @@ type FormContainerProps = {
 
 function FormContainer({ children }: FormContainerProps) {
   return (
-    <Box display="flex" flexDirection="column" p={2} gap={2}>
+    <Box
+      display="flex"
+      justifyContent="center"
+      sx={{
+        flexDirection: {
+          xs: 'column',
+          md: 'row',
+        },
+      }}
+      p={2}
+      gap={2}
+    >
       {children}
     </Box>
   )

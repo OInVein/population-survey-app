@@ -4,6 +4,8 @@ function SubmitButton() {
   return (
     <Button
       type="submit"
+      variant="contained"
+      size="large"
       sx={(theme) => ({
         [theme.breakpoints.up('md')]: {
           height: theme.spacing(5),
@@ -12,7 +14,6 @@ function SubmitButton() {
           height: theme.spacing(7),
         },
       })}
-      variant="contained"
     >
       Submit
     </Button>

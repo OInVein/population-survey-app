@@ -1,3 +1,4 @@
+import { ReactNode } from 'react'
 import {
   FormControl,
   MenuItem,
@@ -17,8 +18,9 @@ function Select({ id, label, placeholder, defaultValue, items }: SelectProps) {
       <MuiSelect
         id={id}
         label={label}
+        displayEmpty={Boolean(placeholder)}
         defaultValue={defaultValue}
-        placeholder={placeholder}
+        renderValue={(selected) => (!selected ? <em>{placeholder}</em> : (selected as ReactNode))}
         sx={{
           [theme.breakpoints.up('xs')]: {
             height: theme.spacing(7),
@@ -28,6 +30,11 @@ function Select({ id, label, placeholder, defaultValue, items }: SelectProps) {
           },
         }}
       >
+        {placeholder && (
+          <MenuItem disabled value="">
+            <em>{placeholder}</em>
+          </MenuItem>
+        )}
         {items.map(({ value, title }) => (
           <MenuItem key={value} value={value}>
             {title}
