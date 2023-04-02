@@ -6,7 +6,7 @@ function SubmitButton() {
       type="submit"
       sx={(theme) => ({
         [theme.breakpoints.up('md')]: {
-          height: theme.spacing(6),
+          height: theme.spacing(5),
         },
         [theme.breakpoints.up('xs')]: {
           height: theme.spacing(7),
