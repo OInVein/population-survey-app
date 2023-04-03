@@ -5,24 +5,34 @@ import { FormValues } from './types/Form'
 import { cityCountyData } from '../constants'
 
 function DistrictSelect() {
-  const { watch, setValue } = useFormContext<FormValues>()
+  const {
+    watch,
+    setValue,
+    formState: { isDirty },
+  } = useFormContext<FormValues>()
   const countyValue = watch('county')
-  const [items, key] = useMemo(
-    () => [
+  const items = useMemo(
+    () =>
       (cityCountyData[countyValue] || []).map((value) => ({
         value,
         title: value,
       })),
-      Math.random(),
-    ],
     [countyValue],
   )
 
   useEffect(() => {
-    setValue('district', '')
-  }, [items, setValue])
+    if (isDirty) setValue('district', '')
+  }, [items, setValue, isDirty])
 
-  return <Select id="district" key={key} label="區" placeholder="請先選擇 縣/市" items={items} />
+  return (
+    <Select
+      id="district"
+      label="區"
+      placeholder="請先選擇 縣/市"
+      items={items}
+      disabled={items.length === 0}
+    />
+  )
 }
 
 export default DistrictSelect

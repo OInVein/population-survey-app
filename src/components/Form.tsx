@@ -1,22 +1,22 @@
-import { FormProvider, Resolver, SubmitHandler, useForm } from 'react-hook-form'
+import { FormProvider, SubmitHandler, useForm } from 'react-hook-form'
+import { useNavigate } from 'react-router-dom'
 import FormContainer from './FormContainer'
 import YearSelect from './YearSelect'
 import CountySelect from './CountySelect'
 import DistrictSelect from './DistrictSelect'
 import SubmitButton from './SubmitButton'
-import { FormValues } from './types/Form'
+import { FormProps, FormValues } from './types/Form'
 
-function Form() {
-  const method = useForm<FormValues>({
-    defaultValues: {
-      year: '103',
-      county: '',
-      district: '',
-    },
-  })
+function Form({ defaultValues }: FormProps) {
+  const navigate = useNavigate()
+  const method = useForm<FormValues>({ defaultValues })
   const { handleSubmit } = method
 
-  const onSubmit: SubmitHandler<FormValues> = (data) => console.log(data)
+  const onSubmit: SubmitHandler<FormValues> = (data) => {
+    const { year, county, district } = data
+    const newUrl = `/${year}/${county}/${district}`
+    navigate(newUrl, { replace: true })
+  }
 
   return (
     // eslint-disable-next-line react/jsx-props-no-spreading
