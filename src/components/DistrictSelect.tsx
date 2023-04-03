@@ -8,7 +8,7 @@ function DistrictSelect() {
   const {
     watch,
     setValue,
-    formState: { isDirty },
+    formState: { dirtyFields },
   } = useFormContext<FormValues>()
   const countyValue = watch('county')
   const items = useMemo(
@@ -21,8 +21,10 @@ function DistrictSelect() {
   )
 
   useEffect(() => {
-    if (isDirty) setValue('district', '')
-  }, [items, setValue, isDirty])
+    if (dirtyFields.county) {
+      setValue('district', '')
+    }
+  }, [items, setValue, dirtyFields.county])
 
   return (
     <Select

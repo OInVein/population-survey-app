@@ -5,11 +5,13 @@ import YearSelect from './YearSelect'
 import CountySelect from './CountySelect'
 import DistrictSelect from './DistrictSelect'
 import SubmitButton from './SubmitButton'
-import { FormProps, FormValues } from './types/Form'
+import { FormValues } from './types/Form'
+import { useDefaultFormValues } from '../hooks'
 
-function Form({ defaultValues }: FormProps) {
-  const navigate = useNavigate()
+function Form() {
+  const defaultValues = useDefaultFormValues()
   const method = useForm<FormValues>({ defaultValues })
+  const navigate = useNavigate()
   const { handleSubmit } = method
 
   const onSubmit: SubmitHandler<FormValues> = (data) => {

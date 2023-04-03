@@ -3,7 +3,3 @@ export type FormValues = {
   county: string
   district: string
 }
-
-export type FormProps = {
-  defaultValues: FormValues
-}
