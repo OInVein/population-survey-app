@@ -1,5 +1,5 @@
 import { AppBar, Toolbar } from '@mui/material'
-import { PageContainer, PageTitle, Logo, SettingIcon, Form } from '../components'
+import { PageContainer, PageTitle, Logo, SettingIcon, Form, Charts } from '../components'
 
 function PopulationSurveyPage() {
   return (
@@ -12,6 +12,7 @@ function PopulationSurveyPage() {
       </AppBar>
       <PageTitle />
       <Form />
+      <Charts />
     </PageContainer>
   )
 }
