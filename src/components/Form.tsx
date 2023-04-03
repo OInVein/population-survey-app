@@ -11,7 +11,7 @@ function Form() {
     defaultValues: {
       year: '103',
       county: '',
-      distinct: '',
+      district: '',
     },
   })
   const { handleSubmit } = method

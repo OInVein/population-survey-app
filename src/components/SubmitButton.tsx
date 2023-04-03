@@ -4,7 +4,7 @@ import { FormValues } from './types'
 
 function SubmitButton() {
   const { watch } = useFormContext<FormValues>()
-  const disabled = watch(['year', 'county', 'distinct']).some((value) => !value)
+  const disabled = watch(['year', 'county', 'district']).some((value) => !value)
 
   return (
     <Button

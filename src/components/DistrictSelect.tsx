@@ -19,10 +19,10 @@ function DistrictSelect() {
   )
 
   useEffect(() => {
-    setValue('distinct', '')
+    setValue('district', '')
   }, [items, setValue])
 
-  return <Select id="distinct" key={key} label="區" placeholder="請先選擇 縣/市" items={items} />
+  return <Select id="district" key={key} label="區" placeholder="請先選擇 縣/市" items={items} />
 }
 
 export default DistrictSelect
