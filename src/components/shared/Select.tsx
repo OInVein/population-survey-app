@@ -7,17 +7,22 @@ import {
   useTheme,
   useMediaQuery,
 } from '@mui/material'
+import { useFormContext } from 'react-hook-form'
 import { SelectProps } from '../types'
 
-function Select({ id, label, placeholder, defaultValue, items }: SelectProps) {
+function Select({ id, label, placeholder, defaultValue, items, disabled = false }: SelectProps) {
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.up('md'))
+  const { register } = useFormContext()
+
   return (
     <FormControl color="primary" size={matches ? 'small' : 'medium'}>
       <InputLabel shrink>{label}</InputLabel>
       <MuiSelect
-        id={id}
+        // eslint-disable-next-line react/jsx-props-no-spreading
+        {...register(id)}
         label={label}
+        disabled={disabled}
         displayEmpty={Boolean(placeholder)}
         defaultValue={defaultValue}
         renderValue={(selected) => (!selected ? <em>{placeholder}</em> : (selected as ReactNode))}
@@ -26,6 +31,7 @@ function Select({ id, label, placeholder, defaultValue, items }: SelectProps) {
             height: theme.spacing(7),
           },
           [theme.breakpoints.up('md')]: {
+            minWidth: theme.spacing(24),
             height: theme.spacing(5),
           },
         }}

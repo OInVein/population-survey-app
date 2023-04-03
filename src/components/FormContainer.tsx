@@ -1,13 +1,9 @@
-import { ReactNode } from 'react'
 import { Box } from '@mui/material'
+import { FormContainerProps } from './types'
 
-type FormContainerProps = {
-  children: ReactNode
-}
-
-function FormContainer({ children }: FormContainerProps) {
+function FormContainer({ children, onSubmit }: FormContainerProps) {
   return (
-    <form>
+    <form onSubmit={onSubmit}>
       <Box
         display="flex"
         justifyContent="center"

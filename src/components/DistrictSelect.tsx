@@ -1,15 +1,28 @@
+import { useEffect, useMemo } from 'react'
+import { useFormContext } from 'react-hook-form'
 import { Select } from './shared'
-
-const years = [
-  { value: '100', title: '100' },
-  { value: '101', title: '101' },
-  { value: '102', title: '102' },
-  { value: '103', title: '103' },
-  { value: '104', title: '104' },
-]
+import { FormValues } from './types/Form'
+import { cityCountyData } from '../constants'
 
 function DistrictSelect() {
-  return <Select id="county" label="區" placeholder="請先選擇 縣/市" items={years} />
+  const { watch, setValue } = useFormContext<FormValues>()
+  const countyValue = watch('county')
+  const [items, key] = useMemo(
+    () => [
+      (cityCountyData[countyValue] || []).map((value) => ({
+        value,
+        title: value,
+      })),
+      Math.random(),
+    ],
+    [countyValue],
+  )
+
+  useEffect(() => {
+    setValue('distinct', '')
+  }, [items, setValue])
+
+  return <Select id="distinct" key={key} label="區" placeholder="請先選擇 縣/市" items={items} />
 }
 
 export default DistrictSelect

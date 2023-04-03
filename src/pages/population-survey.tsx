@@ -1,15 +1,5 @@
 import { AppBar, Toolbar } from '@mui/material'
-import {
-  PageContainer,
-  PageTitle,
-  Logo,
-  SettingIcon,
-  FormContainer,
-  YearSelect,
-  CountySelect,
-  DistrictSelect,
-  SubmitButton,
-} from '../components'
+import { PageContainer, PageTitle, Logo, SettingIcon, Form } from '../components'
 
 function PopulationSurveyPage() {
   return (
@@ -21,12 +11,7 @@ function PopulationSurveyPage() {
         </Toolbar>
       </AppBar>
       <PageTitle />
-      <FormContainer>
-        <YearSelect />
-        <CountySelect />
-        <DistrictSelect />
-        <SubmitButton />
-      </FormContainer>
+      <Form />
     </PageContainer>
   )
 }
