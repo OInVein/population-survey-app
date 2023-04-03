@@ -28,5 +28,13 @@ module.exports = {
     'react-hooks/exhaustive-deps': 'warn',
     'import/prefer-default-export': 'off',
     'react/require-default-props': 'off',
+    '@typescript-eslint/no-misused-promises': [
+      'warn',
+      {
+        checksVoidReturn: {
+          attributes: false,
+        },
+      },
+    ],
   },
 }
