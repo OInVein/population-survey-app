@@ -1,19 +1,17 @@
 import { Typography } from '@mui/material'
-import { usePopulationSurveyContext } from '../context'
 
 function Logo() {
-  const { isLoading } = usePopulationSurveyContext()
   return (
     <Typography
       variant="h3"
       display="inline-block"
       component="a"
       target="_blank"
-      href={isLoading ? undefined : 'https://github.com/OInVein'}
+      href="https://github.com/OInVein"
       sx={(theme) => ({
-        cursor: isLoading ? 'not-allowed' : 'pointer',
+        cursor: 'pointer',
         transition: 'all .3s',
-        borderRadius: 16,
+        borderRadius: theme.spacing(2),
 
         ':after': {
           content: '"👨‍🚀"',
