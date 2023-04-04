@@ -1,32 +1,6 @@
-import { Box, Paper, LinearProgress, Typography } from '@mui/material'
+import { Box, Paper, Typography } from '@mui/material'
 import { usePopulationSurveyContext } from '../context'
-
-function Loading() {
-  const { isLoading } = usePopulationSurveyContext()
-
-  return (
-    <Box display={isLoading ? 'block' : 'none'}>
-      <LinearProgress
-        variant="determinate"
-        sx={(theme) => ({
-          position: 'relative',
-          top: theme.spacing(-2),
-          borderRadius: theme.spacing(2),
-          opacity: 0.7,
-        })}
-      />
-      <LinearProgress
-        color="secondary"
-        sx={(theme) => ({
-          position: 'relative',
-          top: theme.spacing(-1.8),
-          borderRadius: theme.spacing(2),
-          opacity: 0.7,
-        })}
-      />
-    </Box>
-  )
-}
+import ChartsLoading from './ChartsLoading'
 
 function Charts() {
   const { isLoading } = usePopulationSurveyContext()
@@ -47,15 +21,19 @@ function Charts() {
         zIndex={1}
         sx={(theme) => ({
           transition: 'all .3s',
-          top: theme.spacing(0.8),
+          top: theme.spacing(0.5),
           transform: isLoading ? 'scale(1.2)' : null,
           boxShadow: isLoading ? `0 0 20px 2px ${theme.palette.primary.light}` : null,
           backgroundColor: isLoading ? theme.palette.primary.main : null,
           borderRadius: isLoading ? theme.spacing(2) : null,
           padding: isLoading ? theme.spacing(1) : null,
+
+          ':after': {
+            content: isLoading ? '"🚀"' : null,
+          },
         })}
       >
-        {isLoading ? '搜尋中 🚀' : '搜尋結果'}
+        {isLoading ? '搜尋中' : '搜尋結果'}
       </Typography>
       <Paper
         sx={(theme) => ({
@@ -92,8 +70,8 @@ function Charts() {
           },
         })}
       >
-        <Box flex={1}>
-          <Loading />
+        <Box display="flex" flex={1}>
+          <ChartsLoading />
         </Box>
       </Paper>
     </Box>
