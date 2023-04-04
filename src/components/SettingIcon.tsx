@@ -1,9 +1,11 @@
 import { IconButton } from '@mui/material'
 import SettingsIcon from '@mui/icons-material/Settings'
+import { usePopulationSurveyContext } from '../context'
 
 function SettingIcon() {
+  const { isLoading } = usePopulationSurveyContext()
   return (
-    <IconButton>
+    <IconButton disabled={isLoading}>
       <SettingsIcon
         sx={(theme) => ({
           border: '1px solid',

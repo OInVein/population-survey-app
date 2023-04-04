@@ -4,8 +4,8 @@ import { PopulationSurveyProvider } from '../context'
 
 function PopulationSurveyPage() {
   return (
-    <PageContainer>
-      <PopulationSurveyProvider>
+    <PopulationSurveyProvider>
+      <PageContainer>
         <AppBar position="sticky" color="primary">
           <Toolbar>
             <Logo />
@@ -15,8 +15,8 @@ function PopulationSurveyPage() {
         <PageTitle />
         <Form />
         <Charts />
-      </PopulationSurveyProvider>
-    </PageContainer>
+      </PageContainer>
+    </PopulationSurveyProvider>
   )
 }
 

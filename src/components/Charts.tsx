@@ -46,10 +46,16 @@ function Charts() {
         variant="h4"
         zIndex={1}
         sx={(theme) => ({
+          transition: 'all .3s',
           top: theme.spacing(0.8),
+          transform: isLoading ? 'scale(1.2)' : null,
+          boxShadow: isLoading ? `0 0 20px 2px ${theme.palette.primary.light}` : null,
+          backgroundColor: isLoading ? theme.palette.primary.main : null,
+          borderRadius: isLoading ? theme.spacing(2) : null,
+          padding: isLoading ? theme.spacing(1) : null,
         })}
       >
-        搜尋結果
+        {isLoading ? '搜尋中 🚀' : '搜尋結果'}
       </Typography>
       <Paper
         sx={(theme) => ({

@@ -1,10 +1,12 @@
 import { useEffect, useMemo } from 'react'
 import { useFormContext } from 'react-hook-form'
+import { usePopulationSurveyContext } from '../context'
 import { Select } from './shared'
 import { FormValues } from './types/Form'
 import { cityCountyData } from '../constants'
 
 function DistrictSelect() {
+  const { isLoading } = usePopulationSurveyContext()
   const {
     watch,
     setValue,
@@ -32,7 +34,7 @@ function DistrictSelect() {
       label="區"
       placeholder="請先選擇 縣/市"
       items={items}
-      disabled={items.length === 0}
+      disabled={items.length === 0 || isLoading}
     />
   )
 }

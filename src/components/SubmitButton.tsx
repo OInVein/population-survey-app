@@ -1,10 +1,12 @@
 import { Button } from '@mui/material'
 import { useFormContext } from 'react-hook-form'
 import { FormValues } from './types'
+import { usePopulationSurveyContext } from '../context'
 
 function SubmitButton() {
+  const { isLoading } = usePopulationSurveyContext()
   const { watch } = useFormContext<FormValues>()
-  const disabled = watch(['year', 'county', 'district']).some((value) => !value)
+  const disabled = watch(['year', 'county', 'district']).some((value) => !value) || isLoading
 
   return (
     <Button
