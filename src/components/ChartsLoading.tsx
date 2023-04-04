@@ -8,6 +8,7 @@ function ChartsLoading() {
     <Box display={isLoading ? 'block' : 'none'} position="relative" flex={1}>
       <LinearProgress
         variant="determinate"
+        value={100}
         sx={(theme) => ({
           position: 'relative',
           top: theme.spacing(-2),
