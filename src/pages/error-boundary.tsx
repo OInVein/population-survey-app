@@ -12,7 +12,7 @@ function ErrorBoundaryPage() {
           variant={matches ? 'h1' : 'h3'}
           color="common.white"
           sx={{
-            '@keyframes move': {
+            '@keyframes fadeShine': {
               from: {
                 opacity: 0,
                 boxShadow: 'none',
@@ -22,7 +22,8 @@ function ErrorBoundaryPage() {
                 boxShadow: `0 0 20px 2px ${theme.palette.secondary.main}`,
               },
             },
-            animation: 'move 1s infinite linear alternate-reverse',
+
+            animation: 'fadeShine 1s infinite linear alternate-reverse',
             p: 2,
             borderRadius: theme.spacing(4),
           }}
