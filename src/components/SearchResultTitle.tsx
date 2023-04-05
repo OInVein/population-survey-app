@@ -11,7 +11,7 @@ function SearchResultTitle() {
       zIndex={1}
       sx={(theme) => ({
         transition: 'all .3s',
-        top: theme.spacing(0.5),
+        top: theme.spacing(0),
         transform: isLoading ? 'scale(1.2)' : null,
         boxShadow: isLoading ? `0 0 20px 2px ${theme.palette.primary.light}` : null,
         backgroundColor: isLoading ? theme.palette.primary.main : null,
