@@ -20,7 +20,7 @@ function Logo() {
         ':hover': {
           backgroundColor: 'transparent',
           boxShadow: `0 0 20px 2px ${theme.palette.primary.light}`,
-          border: '1px solid',
+          border: `1px solid ${theme.palette.common.white}`,
           transform: 'scale(1.1)',
 
           ':after': {
