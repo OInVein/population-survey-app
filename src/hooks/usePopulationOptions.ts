@@ -1,7 +1,9 @@
-import { usePopulationSurveyContext } from '../context'
+import { useColorMode, usePopulationSurveyContext } from '../context'
 
 const usePopulationOptions = () => {
   const { chartData } = usePopulationSurveyContext()
+  const { mode } = useColorMode()
+  const isDark = mode === 'dark'
   const householdOrdinaryMaleData =
     chartData?.reduce((acc, cur) => acc + Number(cur.household_ordinary_m), 0) || 0
   const householdOrdinaryFemaleData =
@@ -34,13 +36,13 @@ const usePopulationOptions = () => {
       {
         name: '男性',
         type: 'column',
-        color: 'orangered',
+        color: isDark ? 'orangered' : 'cornflowerblue',
         data: [householdOrdinaryMaleData, householdOrdinaryFemaleData],
       },
       {
         name: '女性',
         type: 'column',
-        color: 'gold',
+        color: isDark ? 'gold' : 'orange',
         data: [householdSingleMaleData, householdSingleFemaleData],
       },
     ],
