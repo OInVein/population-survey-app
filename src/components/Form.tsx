@@ -1,18 +1,21 @@
 import { FormProvider, SubmitHandler, useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
-import { useCallback, useEffect } from 'react'
+import { ReactNode, useCallback, useEffect } from 'react'
 import FormContainer from './FormContainer'
 import YearSelect from './YearSelect'
 import CountySelect from './CountySelect'
 import DistrictSelect from './DistrictSelect'
 import SubmitButton from './SubmitButton'
-import Charts from './Charts'
 import { FormValues } from './types'
 import { useDefaultFormValues, useValidateUrlParams } from '../hooks'
 import { usePopulationSurveyContext } from '../context'
 import { fetchPopulationSurvey } from '../services'
 
-function Form() {
+type FormProps = {
+  children: ReactNode
+}
+
+function Form({ children }: FormProps) {
   const defaultValues = useDefaultFormValues()
   const method = useForm<FormValues>({ defaultValues })
   const navigate = useNavigate()
@@ -55,11 +58,11 @@ function Form() {
   }, [
     isDirty,
     year.isValid,
-    county.isValid,
-    district.isValid,
     year.value,
-    county.value,
+    district.isValid,
     district.value,
+    county.isValid,
+    county.value,
     handleFetchPopulationSurvey,
   ])
 
@@ -83,7 +86,7 @@ function Form() {
         <DistrictSelect />
         <SubmitButton />
       </FormContainer>
-      <Charts />
+      {children}
     </FormProvider>
   )
 }

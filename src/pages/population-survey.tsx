@@ -1,4 +1,4 @@
-import { PageContainer, PageTitle, Form, AppToolbar } from '../components'
+import { PageContainer, PageTitle, Form, AppToolbar, SearchResult } from '../components'
 import { PopulationSurveyProvider } from '../context'
 
 function PopulationSurveyPage() {
@@ -7,7 +7,9 @@ function PopulationSurveyPage() {
       <PageContainer>
         <AppToolbar />
         <PageTitle />
-        <Form />
+        <Form>
+          <SearchResult />
+        </Form>
       </PageContainer>
     </PopulationSurveyProvider>
   )

@@ -5,7 +5,7 @@ import ResultContainer from './ResultContainer'
 import ResultCharts from './ResultCharts'
 import { usePopulationSurveyContext } from '../context'
 
-function Charts() {
+function SearchResult() {
   const { isLoading } = usePopulationSurveyContext()
 
   return (
@@ -16,4 +16,4 @@ function Charts() {
   )
 }
 
-export default Charts
+export default SearchResult
