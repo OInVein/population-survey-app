@@ -1,15 +1,12 @@
 import { FormProvider, SubmitHandler, useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
-import { useCallback, useEffect } from 'react'
 import FormContainer from './FormContainer'
 import YearSelect from './YearSelect'
 import CountySelect from './CountySelect'
 import DistrictSelect from './DistrictSelect'
 import SubmitButton from './SubmitButton'
 import { FormValues, FormProps } from './types'
-import { useDefaultFormValues, useValidateUrlParams } from '../hooks'
-import { usePopulationSurveyContext } from '../context'
-import { fetchPopulationSurvey } from '../services'
+import { useDefaultFormValues, useValidateUrlParams, useFetchPopulationSurvey } from '../hooks'
 
 function Form({ children }: FormProps) {
   const defaultValues = useDefaultFormValues()
@@ -19,48 +16,8 @@ function Form({ children }: FormProps) {
     handleSubmit,
     formState: { isDirty },
   } = method
-  const { updateValue } = usePopulationSurveyContext()
   const { year, county, district } = useValidateUrlParams()
-
-  const handleFetchPopulationSurvey = useCallback(
-    (values: FormValues, isUnChanged?: boolean) => {
-      if (isUnChanged) return
-
-      updateValue?.({ isLoading: true })
-      fetchPopulationSurvey({
-        year: values.year,
-        county: values.county,
-        district: values.district,
-      })
-        .then((chartData = []) => {
-          updateValue?.({ chartData, isLoading: false })
-        })
-        .catch((err) => {
-          console.error('fetchError: ', err)
-          updateValue?.({ isLoading: false })
-        })
-    },
-    [updateValue],
-  )
-
-  useEffect(() => {
-    if (isDirty || !year.isValid || !county.isValid || !district.isValid) return
-
-    handleFetchPopulationSurvey({
-      year: year.value,
-      county: county.value,
-      district: district.value,
-    })
-  }, [
-    isDirty,
-    year.isValid,
-    year.value,
-    district.isValid,
-    district.value,
-    county.isValid,
-    county.value,
-    handleFetchPopulationSurvey,
-  ])
+  const handleFetchPopulationSurvey = useFetchPopulationSurvey(isDirty)
 
   const onSubmit: SubmitHandler<FormValues> = (values) => {
     const newUrl = `/${values.year}/${values.county}/${values.district}`
