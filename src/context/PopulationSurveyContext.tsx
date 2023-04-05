@@ -1,9 +1,10 @@
 import { ReactNode, createContext, useCallback, useContext, useState } from 'react'
+import { PopulationSurvey } from '../services'
 
 type PopulationSurveyContextType = {
   theme?: 'dark' | 'light'
   isLoading?: boolean
-  chartData?: object[]
+  chartData?: PopulationSurvey[]
   updateValue?: (newValue: PopulationSurveyContextType) => void
 }
 
