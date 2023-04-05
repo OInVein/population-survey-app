@@ -1,8 +1,7 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import { CssBaseline, ThemeProvider } from '@mui/material'
 import { PopulationSurveyPage, ErrorBoundaryPage } from './pages'
-import { theme } from './theme'
 import './styles/default.css'
+import { ColorModeProvider } from './context'
 
 const router = createBrowserRouter([
   {
@@ -19,12 +18,9 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <>
-      <CssBaseline enableColorScheme />
-      <ThemeProvider theme={theme}>
-        <RouterProvider router={router} />
-      </ThemeProvider>
-    </>
+    <ColorModeProvider>
+      <RouterProvider router={router} />
+    </ColorModeProvider>
   )
 }
 

@@ -2,14 +2,12 @@ import { ReactNode, createContext, useCallback, useContext, useState } from 'rea
 import { PopulationSurvey } from '../services'
 
 type PopulationSurveyContextType = {
-  theme?: 'dark' | 'light'
   isLoading?: boolean
   chartData?: PopulationSurvey[]
   updateValue?: (newValue: PopulationSurveyContextType) => void
 }
 
 const initialState: PopulationSurveyContextType = {
-  theme: 'dark',
   isLoading: false,
   updateValue: () => {},
 }

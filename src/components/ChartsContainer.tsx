@@ -6,6 +6,7 @@ function ChartsContainer({ children }: ChartsContainerProps) {
   const { isLoading } = usePopulationSurveyContext()
   return (
     <Paper
+      elevation={0}
       sx={(theme) => ({
         width: {
           xs: '100%',

@@ -1,6 +1,7 @@
-import { createTheme, responsiveFontSizes } from '@mui/material'
+import { ThemeOptions } from '@mui/material'
+import { common } from '@mui/material/colors'
 
-const theme = createTheme({
+const theme: ThemeOptions = {
   palette: {
     mode: 'dark',
     primary: {
@@ -14,7 +15,7 @@ const theme = createTheme({
       default: '#121212',
     },
     text: {
-      primary: '#F5F5F5',
+      primary: common.white,
     },
   },
   typography: {
@@ -104,6 +105,6 @@ const theme = createTheme({
       textTransform: 'uppercase',
     },
   },
-})
+}
 
-export default responsiveFontSizes(theme)
+export default theme

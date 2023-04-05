@@ -33,7 +33,7 @@ function Loading() {
       />
       <Skeleton
         variant="rectangular"
-        sx={{ position: 'absolute', height: 1, top: 0, left: 0, bottom: 0, right: 0 }}
+        sx={{ position: 'absolute', height: 1, top: 0, left: 0, bottom: 0, right: 0, opacity: 0.5 }}
       />
     </Box>
   )
