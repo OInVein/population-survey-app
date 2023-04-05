@@ -5,10 +5,10 @@ const theme: ThemeOptions = {
   palette: {
     mode: 'light',
     primary: {
-      main: '#0666aa',
+      main: '#005678',
     },
     secondary: {
-      main: '#BE6FEA',
+      main: '#0666aa',
     },
     background: {
       paper: '#F5F5F5',
