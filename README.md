@@ -18,4 +18,4 @@ pnpm dev
 
 ### Demo
 
-[population-survey.netlify.app/](https://population-survey.netlify.app/)
+https://population-survey.netlify.app/
