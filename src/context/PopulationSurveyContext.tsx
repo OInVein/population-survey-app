@@ -7,16 +7,12 @@ type PopulationSurveyContextType = {
   updateValue?: (newValue: PopulationSurveyContextType) => void
 }
 
-const initialState: PopulationSurveyContextType = {
-  isLoading: false,
-  updateValue: () => {},
-}
-const PopulationSurveyContext = createContext<PopulationSurveyContextType>(initialState)
+const PopulationSurveyContext = createContext<PopulationSurveyContextType>({})
 const { Provider } = PopulationSurveyContext
 const usePopulationSurveyContext = () => useContext(PopulationSurveyContext)
 
 function PopulationSurveyProvider({ children }: { children: ReactNode }) {
-  const [value, setValue] = useState<PopulationSurveyContextType>(initialState)
+  const [value, setValue] = useState<PopulationSurveyContextType>({})
 
   const updateValue = useCallback((newValue: Omit<PopulationSurveyContextType, 'updateValue'>) => {
     setValue((prev) => ({
