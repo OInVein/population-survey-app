@@ -10,7 +10,7 @@ function Logo() {
       href="https://github.com/OInVein"
       sx={(theme) => ({
         cursor: 'pointer',
-        transition: 'all .3s',
+        transition: 'all .1s',
         borderRadius: theme.spacing(2),
 
         ':after': {
