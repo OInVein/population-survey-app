@@ -6,13 +6,13 @@ type PopulationSurveyContextType = {
   chartData?: object[]
   updateValue?: (newValue: PopulationSurveyContextType) => void
 }
+
 const initialState: PopulationSurveyContextType = {
   theme: 'dark',
   isLoading: false,
   chartData: [],
   updateValue: () => {},
 }
-
 const PopulationSurveyContext = createContext<PopulationSurveyContextType>(initialState)
 const { Provider } = PopulationSurveyContext
 const usePopulationSurveyContext = () => useContext(PopulationSurveyContext)

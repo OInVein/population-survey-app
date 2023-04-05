@@ -3,7 +3,6 @@ import { usePopulationSurveyContext } from '../context'
 
 function ChartsTitle() {
   const { isLoading, chartData } = usePopulationSurveyContext()
-
   return (
     <Typography
       color="text.primary"

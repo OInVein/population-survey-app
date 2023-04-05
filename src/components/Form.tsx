@@ -1,19 +1,15 @@
 import { FormProvider, SubmitHandler, useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
-import { ReactNode, useCallback, useEffect } from 'react'
+import { useCallback, useEffect } from 'react'
 import FormContainer from './FormContainer'
 import YearSelect from './YearSelect'
 import CountySelect from './CountySelect'
 import DistrictSelect from './DistrictSelect'
 import SubmitButton from './SubmitButton'
-import { FormValues } from './types'
+import { FormValues, FormProps } from './types'
 import { useDefaultFormValues, useValidateUrlParams } from '../hooks'
 import { usePopulationSurveyContext } from '../context'
 import { fetchPopulationSurvey } from '../services'
-
-type FormProps = {
-  children: ReactNode
-}
 
 function Form({ children }: FormProps) {
   const defaultValues = useDefaultFormValues()

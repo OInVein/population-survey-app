@@ -1,10 +1,6 @@
-import { ReactNode } from 'react'
 import { Container, Box } from '@mui/material'
 import { usePopulationSurveyContext } from '../context'
-
-type PageContainerProps = {
-  children: ReactNode
-}
+import { PageContainerProps } from './types'
 
 function PageContainer({ children }: PageContainerProps) {
   const { isLoading } = usePopulationSurveyContext()

@@ -1,11 +1,11 @@
 import { SelectProps as MuiSelectProps } from '@mui/material'
 
-export type Item = {
+type Item = {
   value: string
   title: string
 }
 
-export type SelectProps = {
+type SelectProps = {
   id: string
   items: Item[]
   label: MuiSelectProps['label']
@@ -13,3 +13,5 @@ export type SelectProps = {
   defaultValue?: MuiSelectProps['defaultValue']
   placeholder?: MuiSelectProps['placeholder']
 }
+
+export type { Item, SelectProps }

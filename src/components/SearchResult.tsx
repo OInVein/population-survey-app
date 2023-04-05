@@ -7,7 +7,6 @@ import { usePopulationSurveyContext } from '../context'
 
 function SearchResult() {
   const { isLoading } = usePopulationSurveyContext()
-
   return (
     <ChartsContainer>
       <ChartsTitle />

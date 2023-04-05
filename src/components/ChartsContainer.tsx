@@ -1,9 +1,5 @@
-import { ReactNode } from 'react'
 import { Box } from '@mui/material'
-
-type ChartsContainerProps = {
-  children: ReactNode
-}
+import { ChartsContainerProps } from './types'
 
 function ChartsContainer({ children }: ChartsContainerProps) {
   return (

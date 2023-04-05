@@ -1,10 +1,9 @@
 import { Box, Paper } from '@mui/material'
-import { ReactNode } from 'react'
 import { usePopulationSurveyContext } from '../context'
+import { ResultContainerProps } from './types'
 
-function ResultContainer({ children }: { children: ReactNode }) {
+function ResultContainer({ children }: ResultContainerProps) {
   const { isLoading } = usePopulationSurveyContext()
-
   return (
     <Paper
       sx={(theme) => ({
