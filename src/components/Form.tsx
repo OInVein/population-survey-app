@@ -32,7 +32,7 @@ function Form({ children }: FormProps) {
         county: values.county,
         district: values.district,
       })
-        .then((chartData) => {
+        .then((chartData = []) => {
           updateValue?.({ chartData, isLoading: false })
         })
         .catch((err) => {
