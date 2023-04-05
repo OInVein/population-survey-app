@@ -11,7 +11,6 @@ type PopulationSurveyContextType = {
 const initialState: PopulationSurveyContextType = {
   theme: 'dark',
   isLoading: false,
-  chartData: [],
   updateValue: () => {},
 }
 const PopulationSurveyContext = createContext<PopulationSurveyContextType>(initialState)
