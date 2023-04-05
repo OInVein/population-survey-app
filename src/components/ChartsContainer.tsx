@@ -8,6 +8,15 @@ function ChartsContainer({ children }: ChartsContainerProps) {
     <Paper
       elevation={0}
       sx={(theme) => ({
+        '@keyframes shine': {
+          from: {
+            boxShadow: 'none',
+          },
+          to: {
+            boxShadow: `0 0 20px 2px ${theme.palette.primary.light}`,
+          },
+        },
+
         width: {
           xs: '100%',
           md: theme.spacing(91),
@@ -21,24 +30,6 @@ function ChartsContainer({ children }: ChartsContainerProps) {
         pt: theme.spacing(2),
         overflow: 'hidden',
         animation: isLoading ? 'shine 3s infinite linear alternate-reverse' : 'none',
-
-        '@keyframes shine': {
-          from: {
-            boxShadow: 'none',
-          },
-          to: {
-            boxShadow: `0 0 20px 2px ${theme.palette.primary.light}`,
-          },
-        },
-
-        ':hover': {
-          boxShadow: `0 0 20px 2px ${theme.palette.primary.light}`,
-
-          ':after': {
-            transform: 'scale(1.1)',
-            textDecoration: 'underline',
-          },
-        },
       })}
     >
       <Box display="flex" flex={1}>
