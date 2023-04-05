@@ -15,7 +15,7 @@ function ModeIcon() {
     <IconButton
       sx={(theme) => ({
         ':hover': {
-          '> :first-child': {
+          '> :first-of-type': {
             border: '1px solid',
             borderRadius: theme.spacing(2),
             backgroundColor: theme.palette.primary.main,
