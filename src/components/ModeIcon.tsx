@@ -1,8 +1,8 @@
-import { IconButton, IconButtonProps } from '@mui/material'
+import { IconButton, SxProps, Theme } from '@mui/material'
 import { LightMode, DarkMode } from '@mui/icons-material'
 import { useColorMode, usePopulationSurveyContext } from '../context'
 
-const sx: IconButtonProps['sx'] = (theme) => ({
+const sx: SxProps<Theme> = (theme) => ({
   border: '1px solid',
   borderRadius: theme.spacing(2),
 })
