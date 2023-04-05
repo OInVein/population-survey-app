@@ -3,8 +3,10 @@ import { LightMode, DarkMode } from '@mui/icons-material'
 import { useColorMode, usePopulationSurveyContext } from '../context'
 
 const sx: SxProps<Theme> = (theme) => ({
-  border: '1px solid',
-  borderRadius: theme.spacing(2),
+  ':hover': {
+    border: '1px solid',
+    borderRadius: theme.spacing(2),
+  },
 })
 
 const icons = {
