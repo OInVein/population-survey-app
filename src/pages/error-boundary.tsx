@@ -10,6 +10,7 @@ function ErrorBoundaryPage() {
       <Box width={1} height={1} display="flex" justifyContent="center" alignItems="center" p={1}>
         <Typography
           variant={matches ? 'h1' : 'h3'}
+          color="text.primary"
           sx={{
             '@keyframes fadeShine': {
               from: {
