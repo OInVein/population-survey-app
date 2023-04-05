@@ -29,9 +29,7 @@ function Select({ id, label, placeholder, defaultValue, items, disabled = false 
             label={label}
             disabled={disabled}
             displayEmpty={Boolean(placeholder)}
-            renderValue={(selected) =>
-              !selected ? <em>{placeholder}</em> : (selected as ReactNode)
-            }
+            renderValue={(selected: ReactNode) => (!selected ? <em>{placeholder}</em> : selected)}
             sx={{
               [theme.breakpoints.up('xs')]: {
                 height: theme.spacing(7),
