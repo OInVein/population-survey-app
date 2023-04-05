@@ -6,6 +6,7 @@ module.exports = {
   },
   extends: [
     'eslint:recommended',
+    'plugin:markdown/recommended',
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
     'airbnb',
