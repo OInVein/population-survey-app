@@ -1,17 +1,10 @@
-import { IconButton, SxProps, Theme } from '@mui/material'
+import { IconButton } from '@mui/material'
 import { LightMode, DarkMode } from '@mui/icons-material'
 import { useColorMode, usePopulationSurveyContext } from '../context'
 
-const sx: SxProps<Theme> = (theme) => ({
-  ':hover': {
-    border: '1px solid',
-    borderRadius: theme.spacing(2),
-  },
-})
-
 const icons = {
-  light: () => <DarkMode sx={sx} />,
-  dark: () => <LightMode sx={sx} />,
+  light: () => <DarkMode />,
+  dark: () => <LightMode />,
 }
 
 function ModeIcon() {
@@ -19,7 +12,19 @@ function ModeIcon() {
   const { toggleColorMode, mode } = useColorMode()
 
   return (
-    <IconButton onClick={() => toggleColorMode()} disabled={isLoading}>
+    <IconButton
+      sx={(theme) => ({
+        ':hover': {
+          '> :first-child': {
+            border: '1px solid',
+            borderRadius: theme.spacing(2),
+            backgroundColor: theme.palette.primary.main,
+          },
+        },
+      })}
+      onClick={() => toggleColorMode()}
+      disabled={isLoading}
+    >
       {icons[mode]()}
     </IconButton>
   )
