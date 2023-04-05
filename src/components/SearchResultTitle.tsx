@@ -23,7 +23,11 @@ function SearchResultTitle() {
         },
       })}
     >
-      {isLoading ? '搜尋中' : `搜尋結果${chartData && chartData.length === 0 ? ' - 查無資料' : ''}`}
+      {isLoading
+        ? '搜尋中'
+        : `${chartData ? '搜尋結果' : ''}${
+            chartData && chartData.length === 0 ? ' - 查無資料' : ''
+          }`}
     </Typography>
   )
 }
