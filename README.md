@@ -18,4 +18,4 @@ pnpm dev
 
 ### Demo
 
-https://population-survey.netlify.app/
+<a href="https://population-survey.netlify.app/" target="_blank">https://population-survey.netlify.app/</a>
