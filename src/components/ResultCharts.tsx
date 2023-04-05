@@ -11,7 +11,13 @@ function ResultCharts() {
 
   return (
     <Box width={1} height={1} display="flex" justifyContent="center" alignItems="center">
-      {hasData && <HighchartsReact highcharts={Highcharts} options={populationOptions} />}
+      {hasData && (
+        <HighchartsReact
+          highcharts={Highcharts}
+          options={populationOptions}
+          containerProps={{ style: { width: '100%', height: '100%' } }}
+        />
+      )}
     </Box>
   )
 }
