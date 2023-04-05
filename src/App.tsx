@@ -1,7 +1,10 @@
+import { lazy } from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import { PopulationSurveyPage, ErrorBoundaryPage } from './pages'
-import './styles/default.css'
 import { ColorModeProvider } from './context'
+import './styles/default.css'
+
+const PopulationSurveyPage = lazy(() => import('./pages/population-survey'))
+const ErrorBoundaryPage = lazy(() => import('./pages/error-boundary'))
 
 const router = createBrowserRouter([
   {
