@@ -1,15 +1,17 @@
-import ChartsLoading from './ChartsLoading'
+import Loading from './Loading'
 import ChartsContainer from './ChartsContainer'
 import ChartsTitle from './ChartsTitle'
 import ResultContainer from './ResultContainer'
+import ResultCharts from './ResultCharts'
+import { usePopulationSurveyContext } from '../context'
 
 function Charts() {
+  const { isLoading } = usePopulationSurveyContext()
+
   return (
     <ChartsContainer>
       <ChartsTitle />
-      <ResultContainer>
-        <ChartsLoading />
-      </ResultContainer>
+      <ResultContainer>{isLoading ? <Loading /> : <ResultCharts />}</ResultContainer>
     </ChartsContainer>
   )
 }

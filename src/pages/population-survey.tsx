@@ -1,20 +1,13 @@
-import { AppBar, Toolbar } from '@mui/material'
-import { PageContainer, PageTitle, Logo, SettingIcon, Form, Charts } from '../components'
+import { PageContainer, PageTitle, Form, AppToolbar } from '../components'
 import { PopulationSurveyProvider } from '../context'
 
 function PopulationSurveyPage() {
   return (
     <PopulationSurveyProvider>
       <PageContainer>
-        <AppBar position="sticky" color="primary">
-          <Toolbar>
-            <Logo />
-            <SettingIcon />
-          </Toolbar>
-        </AppBar>
+        <AppToolbar />
         <PageTitle />
         <Form />
-        <Charts />
       </PageContainer>
     </PopulationSurveyProvider>
   )

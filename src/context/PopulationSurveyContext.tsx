@@ -3,11 +3,13 @@ import { ReactNode, createContext, useCallback, useContext, useState } from 'rea
 type PopulationSurveyContextType = {
   theme?: 'dark' | 'light'
   isLoading?: boolean
+  chartData?: object[]
   updateValue?: (newValue: PopulationSurveyContextType) => void
 }
 const initialState: PopulationSurveyContextType = {
   theme: 'dark',
   isLoading: false,
+  chartData: [],
   updateValue: () => {},
 }
 

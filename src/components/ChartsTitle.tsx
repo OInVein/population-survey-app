@@ -2,7 +2,7 @@ import { Typography } from '@mui/material'
 import { usePopulationSurveyContext } from '../context'
 
 function ChartsTitle() {
-  const { isLoading } = usePopulationSurveyContext()
+  const { isLoading, chartData } = usePopulationSurveyContext()
 
   return (
     <Typography
@@ -25,6 +25,7 @@ function ChartsTitle() {
       })}
     >
       {isLoading ? '搜尋中' : '搜尋結果'}
+      {chartData && chartData.length === 0 ? ' - 查無資料' : ''}
     </Typography>
   )
 }

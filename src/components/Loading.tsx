@@ -1,11 +1,8 @@
 import { Box, LinearProgress, Skeleton } from '@mui/material'
-import { usePopulationSurveyContext } from '../context'
 
-function ChartsLoading() {
-  const { isLoading } = usePopulationSurveyContext()
-
+function Loading() {
   return (
-    <Box display={isLoading ? 'block' : 'none'} position="relative" flex={1}>
+    <Box display="block" position="relative" flex={1}>
       <LinearProgress
         variant="determinate"
         value={100}
@@ -42,4 +39,4 @@ function ChartsLoading() {
   )
 }
 
-export default ChartsLoading
+export default Loading

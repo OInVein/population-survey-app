@@ -1,6 +1,5 @@
 export * from './shared'
-export { default as Logo } from './Logo'
-export { default as SettingIcon } from './SettingIcon'
+export { default as AppToolbar } from './AppToolbar'
 export { default as PageContainer } from './PageContainer'
 export { default as SubmitButton } from './SubmitButton'
 export { default as YearSelect } from './YearSelect'
