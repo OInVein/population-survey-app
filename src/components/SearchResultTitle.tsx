@@ -1,7 +1,7 @@
 import { Typography } from '@mui/material'
 import { usePopulationSurveyContext } from '../context'
 
-function ChartsTitle() {
+function SearchResultTitle() {
   const { isLoading, chartData } = usePopulationSurveyContext()
   return (
     <Typography
@@ -29,4 +29,4 @@ function ChartsTitle() {
   )
 }
 
-export default ChartsTitle
+export default SearchResultTitle

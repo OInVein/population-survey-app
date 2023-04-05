@@ -1,18 +1,49 @@
-import { Box } from '@mui/material'
+import { Box, Paper } from '@mui/material'
+import { usePopulationSurveyContext } from '../context'
 import { ChartsContainerProps } from './types'
 
 function ChartsContainer({ children }: ChartsContainerProps) {
+  const { isLoading } = usePopulationSurveyContext()
   return (
-    <Box
-      display="flex"
-      justifyContent="center"
-      alignItems="center"
-      flexDirection="column"
-      position="relative"
-      sx={{ width: 1, height: 1, p: 2, pb: 4 }}
+    <Paper
+      sx={(theme) => ({
+        width: {
+          xs: '100%',
+          md: theme.spacing(91),
+        },
+        height: 1,
+        borderRadius: theme.spacing(2),
+        position: 'relative',
+        display: 'flex',
+        justifyContent: 'center',
+        transition: 'all .1s',
+        pt: theme.spacing(2),
+        overflow: 'hidden',
+        animation: isLoading ? 'shine 3s infinite linear alternate-reverse' : 'none',
+
+        '@keyframes shine': {
+          from: {
+            boxShadow: 'none',
+          },
+          to: {
+            boxShadow: `0 0 20px 2px ${theme.palette.primary.light}`,
+          },
+        },
+
+        ':hover': {
+          boxShadow: `0 0 20px 2px ${theme.palette.primary.light}`,
+
+          ':after': {
+            transform: 'scale(1.1)',
+            textDecoration: 'underline',
+          },
+        },
+      })}
     >
-      {children}
-    </Box>
+      <Box display="flex" flex={1}>
+        {children}
+      </Box>
+    </Paper>
   )
 }
 

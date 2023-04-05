@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material'
-import HighchartsReact from 'highcharts-react-official'
 import Highcharts from 'highcharts'
+import HighchartsReact from 'highcharts-react-official'
 import { usePopulationSurveyContext } from '../context'
 
 const options = {
