@@ -9,7 +9,7 @@ function SearchResultContainer({ children }: ChartsContainerProps) {
       alignItems="center"
       flexDirection="column"
       position="relative"
-      sx={{ width: 1, height: 1, p: 2, pb: 4 }}
+      sx={{ width: 1, height: 1, p: 4 }}
     >
       {children}
     </Box>

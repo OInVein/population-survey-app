@@ -19,7 +19,7 @@ function ChartsContainer({ children }: ChartsContainerProps) {
 
         width: {
           xs: '100%',
-          md: theme.spacing(91),
+          md: theme.spacing(88),
         },
         height: 1,
         borderRadius: theme.spacing(2),

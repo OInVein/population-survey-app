@@ -7,10 +7,9 @@ function ErrorBoundaryPage() {
 
   return (
     <PageContainer>
-      <Box width={1} height={1} display="flex" justifyContent="center" alignItems="center" p={2}>
+      <Box width={1} height={1} display="flex" justifyContent="center" alignItems="center" p={1}>
         <Typography
           variant={matches ? 'h1' : 'h3'}
-          color="common.white"
           sx={{
             '@keyframes fadeShine': {
               from: {

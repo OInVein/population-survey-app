@@ -10,7 +10,7 @@ function PageContainer({ children }: PageContainerProps) {
       maxWidth={false}
       disableGutters
     >
-      <Box bgcolor="background.paper" height={1} display="flex" flexDirection="column">
+      <Box bgcolor="background.paper" height={1} display="flex" flexDirection="column" gap={1}>
         {children}
       </Box>
     </Container>

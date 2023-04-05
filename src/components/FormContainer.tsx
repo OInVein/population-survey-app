@@ -13,8 +13,8 @@ function FormContainer({ children, onSubmit }: FormContainerProps) {
             md: 'row',
           },
         }}
-        p={2}
-        gap={2}
+        p={1}
+        gap={1}
       >
         {children}
       </Box>
